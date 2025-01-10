@@ -1,4 +1,5 @@
 import Home from "./Component/Home/Home"
+import AddTodo from "./Component/Pages/AddTodo"
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
     <>
     <Home/>
+    <AddTodo/>
     </>
   )
 }
