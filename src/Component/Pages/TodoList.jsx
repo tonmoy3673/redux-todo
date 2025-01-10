@@ -1,7 +1,9 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeTodo } from "../Reducers/TodoSlice";
 
 const TodoList = () => {
   const todos = useSelector((state) => state.todos.todos);
+  const dispatch = useDispatch();
   console.log(todos);
   return (
     <div className="py-5">
@@ -14,7 +16,7 @@ const TodoList = () => {
             <p>Id: {todo?.id}</p>
             <h4>{todo?.text}</h4>
             <div>
-              <button className="text-red-600 font-bold text-xl">X</button>
+              <button onClick={()=>dispatch(removeTodo(todo.id))} className="text-red-600 font-bold text-xl">X</button>
             </div>
           </div>
         ))}
