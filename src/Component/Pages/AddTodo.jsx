@@ -7,8 +7,13 @@ const AddTodo =()=>{
     const dispatch = useDispatch();
     const handleAddTodo=(e)=>{
         e.preventDefault();
-        
+        if(input ===''|| typeof(input)!=='string' || !isNaN(input)){
+            alert('Please Enter List Item!!')
+            return
+        }
+       else{
         dispatch(addTodo(input))
+       }
         setInput('')
        
     }
