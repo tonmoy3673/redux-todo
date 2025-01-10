@@ -1,3 +1,4 @@
+import Home from "./Component/Pages/Home"
 
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <>
-     <h2>Redux Todo List</h2>
+     <Home/>
     </>
   )
 }
