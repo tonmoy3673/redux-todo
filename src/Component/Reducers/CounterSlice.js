@@ -10,9 +10,8 @@ export const CounterSlice = createSlice({
     reducers:{
         addCount : (state,action)=>{
             state.count+=action.payload;
-
-
-        }
+        },
+        
     }
 
 });
