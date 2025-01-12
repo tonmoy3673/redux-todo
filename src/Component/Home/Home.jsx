@@ -2,7 +2,7 @@ const Home = () => {
   return (
     <div className="py-10">
       <h2 className="text-gray-600 font-semibold text-3xl text-center ">
-        My Todo List
+       Redux Toolkit
       </h2>
     </div>
   )
