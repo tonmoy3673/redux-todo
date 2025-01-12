@@ -8,7 +8,7 @@ export const UserSlice = createSlice({
     initialState,
     reducers:{
         addUser:(state,action)=>{
-          const user = {id: nanoid(), name:action.payload, email:action.payload};
+          const user = {id: nanoid(), ...action.payload};
           state.users.push(user);
           console.log(user);
         }
