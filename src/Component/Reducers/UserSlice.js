@@ -10,6 +10,7 @@ export const UserSlice = createSlice({
         addUser:(state,action)=>{
           const user = {id: nanoid(), name:action.payload, email:action.payload};
           state.users.push(user);
+          console.log(user);
         }
     }
 

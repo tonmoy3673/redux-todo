@@ -1,10 +1,31 @@
 import { useDispatch } from "react-redux";
+import { addUser } from "../Reducers/UserSlice";
 
 const AddUsers = () => {
-  const dispatch = useDispatch;
-    const handleUsers=()=>{
 
+  const dispatch = useDispatch();
+    const handleUsers=(event)=>{
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        if (name=="" || email=="") {
+            alert('Invalid keyword!!')
+            return
+        }
+        const userInfo = {name,email};
+       if (typeof(userInfo) == 'symbol' || !isNaN(userInfo)) {
+            alert('Invalid keyword!!')
+            return
+        }
+      
+       else{
+        dispatch(addUser(userInfo));
+       form.reset();
+       }
     }
+     
+
 
     return (
     <div>
@@ -12,7 +33,7 @@ const AddUsers = () => {
         <h3 className="text-md font-semibold text-center text-gray-600 py-3">
           Add User Info
         </h3>
-        <form>
+        <form onSubmit={handleUsers}>
           <div className="flex items-center justify-center space-x-8">
             <div className="flex space-x-2 items-center justify-center">
               <label htmlFor="name" className="text-gray-500 font-semibold">
