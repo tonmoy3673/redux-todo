@@ -19,6 +19,9 @@ const AddTodo =()=>{
     }
     return (
         <div>
+            <div>
+                <h2 className="mt-6 py-3 text-center font-semibold text-gray-600">Add Todo List</h2>
+            </div>
             <form onSubmit={handleAddTodo} className="flex items-center justify-center gap-x-3">
                 <div className="flex space-x-3">
                     <label htmlFor="text" className="text-gray-600 font-semibold">Add Task :</label>
