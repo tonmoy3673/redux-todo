@@ -13,7 +13,7 @@ export const UserSlice = createSlice({
           console.log(user);
         },
         deleteUser:(state,action)=>{
-            state.users= state.users.map((user)=>user.id !== action.payload)
+            state.users= state.users.filter((user)=>user.id !== action.payload)
         }
     }
 

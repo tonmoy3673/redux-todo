@@ -1,8 +1,10 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteUser } from "../Reducers/UserSlice";
 
 const Users =()=>{
     const users = useSelector(state=>state.users.users);
     console.log(users);
+    const dispatch= useDispatch();
 
     return (
         <div className="py-6">
@@ -16,7 +18,7 @@ const Users =()=>{
                         <h2>Name : {user?.name}</h2>
                         <h2>Email : {user?.email}</h2>
                         <div className="text-center py-2 mt-1">
-                            <button className="text-sm bg-gray-600 hover:bg-red-500 text-white py-1 px-2 rounded-md shadow-lg">Delete</button>
+                            <button onClick={()=>dispatch(deleteUser(user.id))} className="text-sm bg-gray-600 hover:bg-red-500 text-white py-1 px-2 rounded-md shadow-lg">Delete</button>
                         </div>
                     </div>
                    )
